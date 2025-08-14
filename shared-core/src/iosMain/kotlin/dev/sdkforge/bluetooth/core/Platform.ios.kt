@@ -1,4 +1,4 @@
-package dev.sdkforge.template.core
+package dev.sdkforge.bluetooth.core
 
 import platform.UIKit.UIDevice
 
