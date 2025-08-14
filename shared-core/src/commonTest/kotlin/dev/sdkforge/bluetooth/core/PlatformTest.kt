@@ -1,6 +1,6 @@
 @file:Suppress("ktlint:standard:filename")
 
-package dev.sdkforge.template.core
+package dev.sdkforge.bluetooth.core
 
 import kotlin.test.Test
 import kotlin.test.assertTrue
