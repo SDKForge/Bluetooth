@@ -1,4 +1,4 @@
-package dev.sdkforge.template.app
+package dev.sdkforge.bluetooth.app
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

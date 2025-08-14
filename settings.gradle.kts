@@ -43,7 +43,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SDKForgeTemplate"
+rootProject.name = "SDKForge-Bluetooth"
 
 include(":app-android")
 include(":app-shared")
