@@ -1,0 +1,4 @@
+public final class dev/sdkforge/bluetooth/ui/CompositionLocals_androidKt {
+	public static final fun rememberBLE (Ldev/sdkforge/bluetooth/domain/event/BLEDelegate;Landroidx/compose/runtime/Composer;I)Ldev/sdkforge/bluetooth/domain/BLE;
+}
+
