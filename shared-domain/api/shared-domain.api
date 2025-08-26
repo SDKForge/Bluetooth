@@ -1,0 +1,105 @@
+public abstract interface class dev/sdkforge/bluetooth/domain/BLE {
+	public abstract fun isEnabled ()Z
+	public abstract fun startScan ()V
+	public abstract fun stopScan ()V
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/BLECharacteristic {
+	public abstract fun discoverDescriptors ()V
+	public abstract fun getUuid ()Ljava/lang/String;
+	public abstract fun isNotifying ()Z
+	public abstract fun read ()V
+	public abstract fun write ([B)V
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/BLEDescriptor {
+	public abstract fun getUuid ()Ljava/lang/String;
+	public abstract fun read ()V
+	public abstract fun write ([B)V
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/BLEDevice {
+	public abstract fun connect ()V
+	public abstract fun disconnect ()V
+	public abstract fun discoverServices ()V
+	public abstract fun getName ()Ljava/lang/String;
+	public abstract fun getState ()Ldev/sdkforge/bluetooth/domain/BLEDeviceState;
+}
+
+public final class dev/sdkforge/bluetooth/domain/BLEDeviceState : java/lang/Enum {
+	public static final field CHANGING Ldev/sdkforge/bluetooth/domain/BLEDeviceState;
+	public static final field CONNECTED Ldev/sdkforge/bluetooth/domain/BLEDeviceState;
+	public static final field UNKNOWN Ldev/sdkforge/bluetooth/domain/BLEDeviceState;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Ldev/sdkforge/bluetooth/domain/BLEDeviceState;
+	public static fun values ()[Ldev/sdkforge/bluetooth/domain/BLEDeviceState;
+}
+
+public final class dev/sdkforge/bluetooth/domain/BLEScanError {
+	public fun <init> (I)V
+	public final fun component1 ()I
+	public final fun copy (I)Ldev/sdkforge/bluetooth/domain/BLEScanError;
+	public static synthetic fun copy$default (Ldev/sdkforge/bluetooth/domain/BLEScanError;IILjava/lang/Object;)Ldev/sdkforge/bluetooth/domain/BLEScanError;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/BLEService {
+	public abstract fun discoverCharacteristics ()V
+	public abstract fun getUuid ()Ljava/lang/String;
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/event/BLECharacteristicDelegate {
+	public fun onDescriptorDiscovered (Ldev/sdkforge/bluetooth/domain/BLEDescriptor;)V
+}
+
+public final class dev/sdkforge/bluetooth/domain/event/BLECharacteristicDelegate$DefaultImpls {
+	public static fun onDescriptorDiscovered (Ldev/sdkforge/bluetooth/domain/event/BLECharacteristicDelegate;Ldev/sdkforge/bluetooth/domain/BLEDescriptor;)V
+}
+
+public abstract class dev/sdkforge/bluetooth/domain/event/BLEDelegate : dev/sdkforge/bluetooth/domain/event/BLECharacteristicDelegate, dev/sdkforge/bluetooth/domain/event/BLEDescriptorDelegate, dev/sdkforge/bluetooth/domain/event/BLEDeviceDelegate, dev/sdkforge/bluetooth/domain/event/BLEScanDelegate, dev/sdkforge/bluetooth/domain/event/BLEServiceDelegate {
+	public fun <init> ()V
+	public fun onCharacteristicDiscovered (Ldev/sdkforge/bluetooth/domain/BLECharacteristic;)V
+	public fun onConnected (Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public fun onDescriptorDiscovered (Ldev/sdkforge/bluetooth/domain/BLEDescriptor;)V
+	public fun onDisconnected (Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public fun onDiscovered (Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public fun onError (Ldev/sdkforge/bluetooth/domain/BLEScanError;)V
+	public fun onServiceDiscovered (Ldev/sdkforge/bluetooth/domain/BLEService;)V
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/event/BLEDescriptorDelegate {
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/event/BLEDeviceDelegate {
+	public fun onConnected (Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public fun onDisconnected (Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public fun onServiceDiscovered (Ldev/sdkforge/bluetooth/domain/BLEService;)V
+}
+
+public final class dev/sdkforge/bluetooth/domain/event/BLEDeviceDelegate$DefaultImpls {
+	public static fun onConnected (Ldev/sdkforge/bluetooth/domain/event/BLEDeviceDelegate;Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public static fun onDisconnected (Ldev/sdkforge/bluetooth/domain/event/BLEDeviceDelegate;Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public static fun onServiceDiscovered (Ldev/sdkforge/bluetooth/domain/event/BLEDeviceDelegate;Ldev/sdkforge/bluetooth/domain/BLEService;)V
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/event/BLEScanDelegate {
+	public fun onDiscovered (Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public fun onError (Ldev/sdkforge/bluetooth/domain/BLEScanError;)V
+}
+
+public final class dev/sdkforge/bluetooth/domain/event/BLEScanDelegate$DefaultImpls {
+	public static fun onDiscovered (Ldev/sdkforge/bluetooth/domain/event/BLEScanDelegate;Ldev/sdkforge/bluetooth/domain/BLEDevice;)V
+	public static fun onError (Ldev/sdkforge/bluetooth/domain/event/BLEScanDelegate;Ldev/sdkforge/bluetooth/domain/BLEScanError;)V
+}
+
+public abstract interface class dev/sdkforge/bluetooth/domain/event/BLEServiceDelegate {
+	public fun onCharacteristicDiscovered (Ldev/sdkforge/bluetooth/domain/BLECharacteristic;)V
+}
+
+public final class dev/sdkforge/bluetooth/domain/event/BLEServiceDelegate$DefaultImpls {
+	public static fun onCharacteristicDiscovered (Ldev/sdkforge/bluetooth/domain/event/BLEServiceDelegate;Ldev/sdkforge/bluetooth/domain/BLECharacteristic;)V
+}
+

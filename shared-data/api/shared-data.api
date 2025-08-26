@@ -1,0 +1,7 @@
+public final class dev/sdkforge/bluetooth/data/NativeBLE : dev/sdkforge/bluetooth/domain/BLE {
+	public fun <init> (Landroid/content/Context;Ldev/sdkforge/bluetooth/domain/event/BLEDelegate;)V
+	public fun isEnabled ()Z
+	public fun startScan ()V
+	public fun stopScan ()V
+}
+
