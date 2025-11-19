@@ -9,6 +9,10 @@ plugins {
 }
 
 kotlin {
+    androidLibrary {
+        namespace = "dev.sdkforge.bluetooth.data"
+    }
+
     sourceSets {
         commonMain {
             dependencies {
@@ -22,8 +26,4 @@ kotlin {
             }
         }
     }
-}
-
-android {
-    namespace = "dev.sdkforge.bluetooth.data"
 }
