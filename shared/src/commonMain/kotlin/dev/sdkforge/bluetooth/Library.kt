@@ -1,6 +1,6 @@
 package dev.sdkforge.bluetooth
 
-import dev.sdkforge.template.Library.VERSION
+import dev.sdkforge.bluetooth.Library.VERSION
 
 /**
  * Library metadata and version information.
